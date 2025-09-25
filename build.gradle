@@ -141,17 +141,17 @@ repositories {
     // }
 
     maven {
-        name = "Valkyrien Skies"
-        url = 'https://maven.valkyrienskies.org'
+        url "https://cursemaven.com"
         content {
-            excludeGroup("net.jodah")
-            excludeGroup("org.spongepowered")
+            includeGroup "curse.maven"
         }
     }
 
     maven {
-        name = 'kotlinforforge'
-        url = 'https://thedarkcolour.github.io/KotlinForForge/'
+        url "https://maven.squiddev.cc"
+        content {
+            includeGroup("cc.tweaked")
+        }
     }
 }
 
@@ -178,13 +178,13 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
-    implementation "org.valkyrienskies.core:api:$vs_core_version"
-    implementation "org.valkyrienskies.core:impl:$vs_core_version"
-    implementation "org.valkyrienskies.core:api-game:$vs_core_version"
-    implementation "org.valkyrienskies.core:util:$vs_core_version"
-    implementation fg.deobf("org.valkyrienskies:valkyrienskies-120-forge:$vs2_version")
+    implementation fg.deobf("curse.maven:oc2rvs-1037738:6914611")
+    implementation "curse.maven:oc2raddoncore-1194254:6967195"
+    implementation "curse.maven:markdownmanual-502485:4873115"
 
-    implementation "thedarkcolour:kotlinforforge:$kotlin_version"
+    compileOnly("cc.tweaked:cc-tweaked-$minecraft_version-core-api:$cct_version")
+    compileOnly(fg.deobf("cc.tweaked:cc-tweaked-$minecraft_version-forge-api:$cct_version"))
+    runtimeOnly(fg.deobf("cc.tweaked:cc-tweaked-$minecraft_version-forge:$cct_version"))
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 

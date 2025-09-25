@@ -1,9 +1,9 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "org.example.vs_forge_template.mixin",
+  "package": "io.github.techtastic.oc2rcc.mixin",
   "compatibilityLevel": "JAVA_8",
-  "refmap": "vs_forge_template.refmap.json",
+  "refmap": "oc2rcc.refmap.json",
   "mixins": [
   ],
   "client": [
