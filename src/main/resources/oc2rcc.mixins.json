@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "oc2rcc.refmap.json",
   "mixins": [
+    "MixinCallbacks"
   ],
   "client": [
   ],
